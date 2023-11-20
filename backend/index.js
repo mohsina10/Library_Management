@@ -38,23 +38,39 @@ app.post("/api/register", async (req, res) => {
   res.json({ message: "Registration successful", username, email });
   // res.redirect('/signin');
 });
-app.delete('/api/delete/:id', async (req, res) => {
+app.delete("/api/delete/:id", async (req, res) => {
   try {
     console.log(req.params.id);
-    const deletedItem = await bookadd.findOneAndDelete(req.params.bookname );
+    const deletedItem = await bookadd.findOneAndDelete(req.params.bookname);
     if (!deletedItem) {
-      return res.status(404).json({ message: 'Item not found' });
+      return res.status(404).json({ message: "Item not found" });
     }
-    res.json({ message: 'Item deleted successfully' });
+    res.json({ message: "Item deleted successfully" });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Internal server error' });
+    res.status(500).json({ message: "Internal server error" });
   }
 });
-
-app.get('/api/data', async (req, res) => {
+app.put("/api/update/:id", async (req, res) => {
   try {
-    const data = await bookadd.find(); 
+    console.log(req.body);
+    const updatedItem = await bookadd.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    if (!updatedItem) {
+      return res.status(404).json({ message: "Item not found" });
+    }
+    res.json({ message: "Item updated successfully", updatedItem });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+app.get("/api/data", async (req, res) => {
+  try {
+    const data = await bookadd.find();
     console.log(data);
     res.json(data);
   } catch (err) {
