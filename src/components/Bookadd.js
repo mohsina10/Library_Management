@@ -30,6 +30,7 @@ function Bookadd() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        alert("Data Added Succesfully :)");
         navigate("../");
       })
       .catch((error) => {

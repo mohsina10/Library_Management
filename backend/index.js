@@ -17,7 +17,6 @@ const uri =
 
 mongoose.connect(uri);
 const connection = mongoose.connection;
-
 connection.once("open", () => {
   console.log("Connected to MongoDB successfully.");
 });
@@ -51,14 +50,18 @@ app.delete("/api/delete/:id", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
-app.put("/api/update/:id", async (req, res) => {
+app.put("/api/update/:name", async (req, res) => {
+  const bookName = req.params.name;
+  const updatedData = req.body;
   try {
-    console.log(req.body);
-    const updatedItem = await bookadd.findByIdAndUpdate(
-      req.params.id,
-      req.body,
+    // console.log(bookName);
+    // console.log(updatedData);
+    const updatedItem = await bookadd.findOneAndUpdate(
+      { bookname: bookName },
+      { $set: updatedData },
       { new: true }
-    );
+    ); 
+    console.log(updatedItem)
     if (!updatedItem) {
       return res.status(404).json({ message: "Item not found" });
     }
