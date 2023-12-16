@@ -19,7 +19,10 @@
   justify-content: space-between;
   align-items: center;
 }
-
+.search{
+  align-items: end;
+   margin-left: 75%;
+}
 .logo {
   font-size: 1.5rem;
   font-weight: bold; 
