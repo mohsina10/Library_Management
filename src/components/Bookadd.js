@@ -41,7 +41,9 @@ function Bookadd() {
     <div>
       <header>
         <nav className="navbar">
-          <div className="logo">Library</div>
+        <Link to="../" className="logo">
+            Library
+          </Link>
           <ul className="nav-links">
             <li>
               <a href="signin">Login</a>
@@ -107,7 +109,7 @@ function Bookadd() {
                 onChange={handleChange}
              />
           </div>
-          <button type="submit" className="btn btn-success">
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </form>

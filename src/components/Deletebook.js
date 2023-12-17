@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
  import axios from "axios";
  function Deletebook() { 
   const [itemId, setItemId] = useState('');
@@ -18,7 +19,9 @@ import React, { useState, useEffect } from "react";
     <div>
        <header>
         <nav className="navbar">
-          <div className="logo">Library</div>
+        <Link to="../" className="logo">
+            Library
+          </Link>
           <ul className="nav-links">
             <li>
               <a href="signin">Login</a>
@@ -42,7 +45,7 @@ import React, { useState, useEffect } from "react";
               Enter book Name
        </label><br/> */}
       <input type="text" value={itemId} onChange={(e) => setItemId(e.target.value)} />
-      <button type="button" className="btn btn-success" onClick={handleDelete}>Delete Item</button>
+      <button type="button" className="btn btn-primary" onClick={handleDelete}>Delete Item</button>
       </div>
     </div>
     </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 // import axios from "axios";
 function Viewbook() {
   const [data, setData] = useState([]);
@@ -37,7 +38,9 @@ function Viewbook() {
     <div>
       <header>
         <nav className="navbar">
-          <div className="logo">Library</div>
+        <Link to="../" className="logo">
+            Library
+          </Link>
           <ul className="nav-links">
             <li>
               <a href="signin">Login</a>
@@ -61,7 +64,7 @@ function Viewbook() {
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <button type="submit" className="btn btn-success" onClick={handleUpdate}>
+      <button type="submit" className="btn btn-primary" onClick={handleUpdate}>
         Search
       </button> 
       </div>

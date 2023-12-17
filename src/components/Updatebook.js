@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import axios from "axios";
 function Updatebook() {
   const navigate = useNavigate();
@@ -30,7 +30,9 @@ function Updatebook() {
     <div>
       <header>
         <nav className="navbar">
-          <div className="logo">Library</div>
+        <Link to="../" className="logo">
+            Library
+          </Link>
           <ul className="nav-links">
             <li>
               <a href="signin">Login</a>
@@ -155,7 +157,7 @@ function Updatebook() {
           </div>
           <button
             type="submit"
-            className="btn btn-success"
+            className="btn btn-primary"
             onClick={handleUpdate}
           >
             Submit

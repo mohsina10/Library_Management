@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import '../components/assets/css/style.css'
 // import '../components/assets/css/bootsnav.css'
 import {
@@ -23,7 +24,10 @@ function Home() {
     <div className="App">
       <header>
         <nav className="navbar">
-          <div className="logo">Library</div>
+        <Link to="signin" className="logo">
+            Library
+          </Link>
+          {/* <div className="logo">Library</div> */}
           <ul className="nav-links">
             <li>
               <a href="signin">Login</a>

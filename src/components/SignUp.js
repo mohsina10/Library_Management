@@ -41,7 +41,9 @@ function SignUp() {
     <>
       <header>
         <nav className="navbar">
-          <div className="logo">Library</div>
+        <Link to="../" className="logo">
+            Library
+          </Link>
           <ul className="nav-links">
             <li><a href="signin">Login</a></li>
             <li><a href="signup">SignUp</a></li>
@@ -96,10 +98,10 @@ function SignUp() {
             </label>
             <input type="text" className="form-control" name="geolocation" />
           </div>
-          <button type="submit" className="btn btn-success">
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
-          <Link to="login" className="m-3 btn btn-danger">
+          <Link to="../signin" className="m-3 btn btn-danger">
             Already a User
           </Link>
         </form>

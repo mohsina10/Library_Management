@@ -1,6 +1,6 @@
 import React ,{useState}from 'react'
 import { useLocation } from 'react-router-dom'; 
-
+import { Link } from "react-router-dom";
  function Welcome() {
   const location = useLocation();
   const { username: username } = location.state; 
@@ -16,7 +16,9 @@ import { useLocation } from 'react-router-dom';
     <div>
         <header>
         <nav className="navbar">
-          <div className="logo">Library</div>
+        <Link to="../" className="logo">
+            Library
+          </Link>
           <ul className="nav-links">
             <li><a href="signin">Login</a></li>
             <li><a href="signup">SignUp</a></li>
@@ -32,13 +34,13 @@ import { useLocation } from 'react-router-dom';
       <div className='file'> 
       {/* <h3>Upload a PDF Files</h3><br/> */}
       <div className="btn-grp">
-      <a href='bookadd' className="btn btn-success " role="button">
+      <a href='bookadd' className="btn btn-primary " role="button">
     Add Book
   </a>
-  <a href='delete' className="btn btn-success " role="button">
+  <a href='delete' className="btn btn-primary " role="button">
     Delete Book
   </a>
-  <a href='update' className="btn btn-success " role="button">
+  <a href='update' className="btn btn-primary " role="button">
     Update Book
   </a>
   </div>

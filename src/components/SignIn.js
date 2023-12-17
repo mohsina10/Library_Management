@@ -51,27 +51,15 @@ function SignIn() {
         console.log(e);
 
     }
-    // fetch("http://localhost:5000/api/login", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(formData),
-    // })
-      // .then((response) => response.json())
-      // .then((data) => {
-      //   console.log(data);
-      //   navigate("../welcome");
-      // })
-      // .catch((error) => {
-      //   console.error("Hello Mohsina");
-      // });
+    
   };
   return (
     <> 
       <header>
         <nav className="navbar">
-          <div className="logo">Library</div>
+        <Link to="../" className="logo">
+            Library
+          </Link>
           <ul className="nav-links">
             <li><a href="signin">Login</a></li>
             <li><a href="signup">SignUp</a></li>
@@ -108,7 +96,7 @@ function SignIn() {
               />
             </div>
           </div>
-          <button type="submit" className="btn btn-success">
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </form>
